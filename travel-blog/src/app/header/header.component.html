@@ -1,0 +1,39 @@
+<header>
+    <a href="" class="logo">Travel Blog</a>
+    <div class="container">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    <nav class="nav-bar" >
+        <ul>
+            <li>
+                <a href="" class="active">Home</a>
+            </li>
+            <li>
+                <a href="" class="active">All posts</a>
+            </li>
+            <li>
+                <a href="" class="active">Create a post</a>
+            </li>
+
+            <li>
+                <a href="" class="active">About us</a>
+            </li>
+            <div class="logged" *ngIf="!isLogged">
+            <li>
+                <a href="#" class="active" (click)="loginHandler()">Login</a>
+            </li>
+            <li>
+                <a href="#" class="active">Register</a>
+            </li>
+            </div>
+            <div class="logged" *ngIf="isLogged">
+                <li>
+                    <a href="#" (click)="logoutHandler()" class="active">Logout</a>
+                </li>
+            </div>
+            
+        </ul>
+    </nav>
+</header>
