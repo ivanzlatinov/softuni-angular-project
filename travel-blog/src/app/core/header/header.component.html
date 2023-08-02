@@ -1,5 +1,5 @@
 <header>
-    <a href="" class="logo">Travel Blog</a>
+    <a routerLink="/home" class="logo">Travel Blog</a>
     <div class="container">
         <div class="line"></div>
         <div class="line"></div>
@@ -19,9 +19,7 @@
                 <a routerLink="/about" class="active">About us</a>
             </li>
             <div class="logged" *ngIf="!isLogged">
-                <li>
-                    <a href="" class="active">Create a post</a>
-                </li>
+                
                 <li>
                 <a href="#" class="active" (click)="loginHandler()">Login</a>
             </li>
@@ -30,6 +28,10 @@
             </li>
             </div>
             <div class="logged" *ngIf="isLogged">
+                <li>
+                    <a href="" class="active">Create a post</a>
+                </li>
+
                 <li>
                     <a href="#" (click)="logoutHandler()" class="active">Logout</a>
                 </li>

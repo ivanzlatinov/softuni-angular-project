@@ -8,6 +8,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { UserService } from './user.service';
 import { storageServiceProvider } from './storage.service';
 import { CoreModule } from './core/core.module';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 
 
@@ -17,6 +18,7 @@ import { CoreModule } from './core/core.module';
     AppComponent,
     HomeComponent,
     AboutComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
