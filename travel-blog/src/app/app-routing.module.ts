@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { RegisterComponent } from './auth/register/register.component';
+import { LoginComponent } from './auth/login/login.component';
 
 const routes: Routes = [
   {
@@ -20,6 +22,16 @@ const routes: Routes = [
     path: 'about',
     component: AboutComponent,
     data: { title: 'About us' }
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
+    data: { title: 'Register' }
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+    data: { title: 'Login' }
   },
   {
     path: '**',
