@@ -1,1 +1,39 @@
-<p>login works!</p>
+<div class="login-container">
+    <div class="center">
+      <h1>Login</h1>
+      <form #form="ngForm" (ngSubmit)="loginHandler(form)">
+        <div class="txt_field">
+          <input #emailInput="ngModel" required type="text" ngModel email="true" name="email"  id="email" >
+          <span></span>
+          <label>Email</label>
+        </div>
+        <ng-container *ngIf="emailInput.touched">
+        <p class="error" *ngIf="emailInput.errors?.['required']">
+          Email is required
+        </p>
+        <p class="error" *ngIf="emailInput.errors?.['email'] ">
+          Email is not valid
+        </p>
+      </ng-container>
+        <div class="txt_field">
+          <input type="password" ngModel #passwordInput="ngModel"  name="password" id="password" required [minlength]="5">
+          <span></span>
+          <label>Password</label>
+        </div>
+        <ng-container *ngIf="passwordInput.touched">
+        <p class="error" *ngIf="passwordInput.errors?.['required']">
+         Password is required
+        </p> 
+        <p class="error" *ngIf="passwordInput.errors?.['minlength']" >
+          Password must be atleast 5 characters long
+        </p> 
+      </ng-container>
+
+        <button type="submit" value="Login" [disabled]="form.invalid" >Login</button>
+        <div class="signup_link">
+          Not a member? <a routerLink="/register">Signup</a>
+        </div>
+      </form>
+    </div>
+
+</div>

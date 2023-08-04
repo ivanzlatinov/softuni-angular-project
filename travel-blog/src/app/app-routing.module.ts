@@ -5,6 +5,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
+import { CatalogComponent } from './pages/catalog/catalog.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,11 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent,
     data: { title: 'Login' }
+  },
+  {
+    path: 'posts',
+    component: CatalogComponent,
+    data: { title: 'Posts' }
   },
   {
     path: '**',

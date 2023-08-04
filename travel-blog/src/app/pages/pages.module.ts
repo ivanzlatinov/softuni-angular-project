@@ -4,7 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CatalogComponent } from './catalog/catalog.component';
-
+import { AppRoutingModule } from '../app-routing.module';
 
 
 
@@ -16,7 +16,8 @@ import { CatalogComponent } from './catalog/catalog.component';
     CatalogComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    AppRoutingModule,
   ],
   exports: [
     HomeComponent,
