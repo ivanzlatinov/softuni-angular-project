@@ -6,11 +6,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
-import { UserService } from './user.service';
-import { storageServiceProvider } from './storage.service';
 import { CoreModule } from './core/core.module';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
-
+import { ArticleModule } from './article/article.module';
 
 
 
@@ -25,12 +23,10 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
     BrowserModule,
     AppRoutingModule,
     CoreModule,
+    ArticleModule,
     HttpClientModule,
   ],
-  providers: [
-    UserService,
-    storageServiceProvider,
-    ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

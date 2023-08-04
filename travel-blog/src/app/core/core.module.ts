@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
+import { storageServiceProvider } from './storage.service';
+import { ArticleService } from './article.service';
+import { UserService } from './user.service';
 
 
 
@@ -18,6 +21,12 @@ import { RouterModule } from '@angular/router';
   exports: [
     HeaderComponent,
     FooterComponent,
+  ],
+  providers: [
+    UserService,
+    ArticleService,
+    storageServiceProvider,
   ]
+
 })
 export class CoreModule { }

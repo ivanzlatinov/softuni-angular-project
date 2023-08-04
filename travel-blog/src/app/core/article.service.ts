@@ -2,13 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IArticle } from './interfaces';
 import { Observable } from 'rxjs';
-import { environment } from '../enviroments/enviroment'
+import { environment } from '../../enviroments/enviroment'
 
 const apiUrl = environment.apiUrl;
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ArticleService {
 
   constructor(private http: HttpClient) { }
