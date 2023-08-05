@@ -4,11 +4,11 @@ import { IArticle } from '../../core/interfaces';
 
 
 @Component({
-  selector: 'app-catalog',
-  templateUrl: './catalog.component.html',
-  styleUrls: ['./catalog.component.css']
+  selector: 'app-posts',
+  templateUrl: './posts.component.html',
+  styleUrls: ['./posts.component.css']
 })
-export class CatalogComponent  implements OnInit{
+export class PostsComponent  implements OnInit{
 
   //TODO
   articleList!: IArticle[];

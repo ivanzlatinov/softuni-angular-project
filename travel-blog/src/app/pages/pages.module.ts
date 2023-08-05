@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { CatalogComponent } from './catalog/catalog.component';
+import { PostsComponent } from './posts/posts.component';
 import { AppRoutingModule } from '../app-routing.module';
 
 
@@ -13,7 +13,7 @@ import { AppRoutingModule } from '../app-routing.module';
     HomeComponent,
     AboutComponent,
     PageNotFoundComponent,
-    CatalogComponent,
+    PostsComponent,
   ],
   imports: [
     CommonModule,
@@ -23,7 +23,7 @@ import { AppRoutingModule } from '../app-routing.module';
     HomeComponent,
     AboutComponent,
     PageNotFoundComponent,
-    CatalogComponent,
+    PostsComponent,
   ]
 })
 export class PagesModule { }

@@ -2,7 +2,7 @@
     width: 100%;
     padding: 78px 0px;
     background-color: #191919;
-    height: 900px;
+    height: 800px;
 
 }
 .about img{
@@ -39,11 +39,11 @@
     letter-spacing: 2px;
 }
 .aboutSpan{
-    color: #f9004d;
+    color: #4CAF50;
 }
 
 .about-text p {
-    color: #fcfc;
+    color: rgba(172, 236, 180, 0.8);
     letter-spacing: 1px;
     line-height: 28px;
     font-size: 18px;
@@ -51,7 +51,7 @@
 }
 
 .about-btn {
-    background: #f9004d;
+    background: #4CAF50;
     color: white;
     text-decoration: none;
     border: 2px solid transparent;
@@ -63,6 +63,6 @@
 
 .about-btn:hover {
 background: transparent;
-border: 2px solid #f9004d;
+border: 2px solid #4CAF50;
 cursor: pointer;
 }
