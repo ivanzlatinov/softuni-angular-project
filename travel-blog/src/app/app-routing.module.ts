@@ -6,6 +6,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
 import { PostsComponent } from './pages/posts/posts.component';
+import { CreateComponent } from './pages/create/create.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,11 @@ const routes: Routes = [
     path: 'posts',
     component: PostsComponent,
     data: { title: 'Posts' }
+  },
+  {
+    path: 'create',
+    component: CreateComponent,
+    data: { title: 'Create a post' }
   },
   {
     path: '**',

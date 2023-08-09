@@ -18,7 +18,7 @@
             <li>
                 <a routerLink="/about" class="active">About us</a>
             </li>
-            <div class="logged" *ngIf="!isLogged">
+            <div class="logged" *ngIf="!isLogged; else LoggedIn">
                 
                 <li>
                 <a routerLink="/login" class="active">Login</a>
@@ -27,16 +27,19 @@
                 <a routerLink="/register" class="active">Register</a>
             </li>
             </div>
-            <div class="logged" *ngIf="isLogged">
+            
+            <ng-template #LoggedIn>
+            <div class="logged" >
                 <li>
-                    <a href="" class="active">Create a post</a>
+                    <a routerLink="/create" class="active">Create a post</a>
                 </li>
 
                 <li>
                     <a href="#" (click)="logoutHandler()" class="active">Logout</a>
                 </li>
             </div>
-            
+        </ng-template>
+
         </ul>
     </nav>
 </header>

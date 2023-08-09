@@ -6,6 +6,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { PostsComponent } from './posts/posts.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { SharedModule } from '../shared/shared.module';
+import { CreateComponent } from './create/create.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -15,17 +17,21 @@ import { SharedModule } from '../shared/shared.module';
     AboutComponent,
     PageNotFoundComponent,
     PostsComponent,
+    CreateComponent,
   ],
   imports: [
     CommonModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   exports: [
     HomeComponent,
     AboutComponent,
     PageNotFoundComponent,
     PostsComponent,
+    CreateComponent
   ]
 })
 export class PagesModule { }
