@@ -8,6 +8,8 @@ import { LoginComponent } from './auth/login/login.component';
 import { PostsComponent } from './pages/posts/posts.component';
 import { CreateComponent } from './pages/create/create.component';
 import { MyListingsComponent } from './pages/my-listings/my-listings.component';
+import { PostDetailsComponent } from './pages/post-details/post-details.component';
+import { AuthGuard } from './core/guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -43,13 +45,21 @@ const routes: Routes = [
   },
   {
     path: 'create',
+    canActivate: [AuthGuard],
     component: CreateComponent,
     data: { title: 'Create a post' }
   },
   {
     path: 'my-listings',
+    canActivate: [AuthGuard],
     component: MyListingsComponent,
     data: { title: 'My listings' }
+  },
+  {
+    path: 'posts/:postId',
+    canActivate: [AuthGuard],
+    component: PostDetailsComponent,
+    data: { title: 'Details' }
   },
   {
     path: '**',

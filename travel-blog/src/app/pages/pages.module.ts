@@ -9,6 +9,7 @@ import { SharedModule } from '../shared/shared.module';
 import { CreateComponent } from './create/create.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MyListingsComponent } from './my-listings/my-listings.component';
+import { PostDetailsComponent } from './post-details/post-details.component';
 
 
 
@@ -20,6 +21,7 @@ import { MyListingsComponent } from './my-listings/my-listings.component';
     PostsComponent,
     CreateComponent,
     MyListingsComponent,
+    PostDetailsComponent,
   ],
   imports: [
     CommonModule,
@@ -33,7 +35,9 @@ import { MyListingsComponent } from './my-listings/my-listings.component';
     AboutComponent,
     PageNotFoundComponent,
     PostsComponent,
-    CreateComponent
+    CreateComponent,
+    MyListingsComponent,
+    PostDetailsComponent,
   ]
 })
 export class PagesModule { }
