@@ -7,6 +7,7 @@ import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
 import { PostsComponent } from './pages/posts/posts.component';
 import { CreateComponent } from './pages/create/create.component';
+import { MyListingsComponent } from './pages/my-listings/my-listings.component';
 
 const routes: Routes = [
   {
@@ -44,6 +45,11 @@ const routes: Routes = [
     path: 'create',
     component: CreateComponent,
     data: { title: 'Create a post' }
+  },
+  {
+    path: 'my-listings',
+    component: MyListingsComponent,
+    data: { title: 'My listings' }
   },
   {
     path: '**',
