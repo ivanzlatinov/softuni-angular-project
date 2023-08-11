@@ -13,17 +13,6 @@
         <p class="error" *ngIf="form.get('email')?.errors?.['required']">
           Email is required</p>
         </ng-container>
-        <div class="txt_field">
-          <input type="text" formControlName="username" id="username" required>
-          <span></span>
-          <label>Username</label>
-        </div>
-        <ng-container *ngIf="form.get('username')?.touched">
-          <p class="error" *ngIf="form.get('username')?.errors?.['required']">
-            Username is required</p>
-          <p class="error" *ngIf="form.get('username')?.errors?.['minlength']">
-            Username must be atleast 5 characters long</p>
-          </ng-container>
         <ng-container formGroupName="passwords">
         <div class="txt_field">
           <input type="password" formControlName="password" id="password" required>

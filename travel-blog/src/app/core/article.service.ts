@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IArticle } from './interfaces';
 import { Observable } from 'rxjs';
-import { environment } from '../../enviroments/enviroment'
 
-const apiUrl = environment.apiUrl;
+
+const apiUrl = 'http://localhost:3000/';
 
 @Injectable()
 export class ArticleService {
