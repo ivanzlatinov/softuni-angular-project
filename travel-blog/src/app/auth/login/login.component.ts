@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { UserService } from 'src/app/core/user.service';
 import { Router } from '@angular/router';
 
@@ -10,16 +10,22 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
    
-  constructor(private userService: UserService, private router: Router ) {
+  constructor( private fb: FormBuilder ,private userService: UserService, private router: Router ) {
   
     
   }
 
+  EMAIL_PATTERN = /^[a-z0-9A-Z\.-]{3,}@[a-z]+\.[a-z]+$/
+
+  form = this.fb.group({
+    email: ['', [Validators.required, Validators.pattern(this.EMAIL_PATTERN)]],
+    password: ['', [Validators.required, Validators.minLength(5)]],
+  })
  
 
-  loginHandler(form: NgForm): void {
+  loginHandler(): void {
     //TODO 
-    if(form.invalid) { return; }
+   
     this.userService.login();
     this.router.navigate(['/home']);
     
