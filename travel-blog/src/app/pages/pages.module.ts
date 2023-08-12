@@ -27,8 +27,8 @@ import { PostDetailsComponent } from './post-details/post-details.component';
     CommonModule,
     AppRoutingModule,
     SharedModule,
-    FormsModule,
     ReactiveFormsModule,
+    FormsModule
   ],
   exports: [
     HomeComponent,

@@ -1,41 +1,76 @@
 <div class="container">
-  <form>
+  <form [formGroup]="form" (ngSubmit)="createHandler">
     <div class="wrapper">
       <div class="title">Create a Post</div>
       <div class="form">
         <div class="inputfield">
           <label>Destination</label>
-          <input type="text" class="input" name="destination" id="destination"/>
+          <input type="text" class="input" formControlName="destination"  id="destination"/>
         </div>
+        <ng-container *ngIf="form.get('destination')?.touched">
+          <p class="error" *ngIf="form.get('destination')?.errors?.['required']">
+           Destination is required</p>
+          <p class="error" *ngIf="form.get('destination')?.errors?.['minlength']">
+           Destination name must be atleast 3 characters long </p>
+        </ng-container>
 
         <div class="inputfield">
           <label>Title</label>
-          <input type="text" class="input" name="title" id="title" />
+          <input type="text" class="input" formControlName="title"  id="title" />
         </div>
+        <ng-container *ngIf="form.get('title')?.touched">
+          <p class="error" *ngIf="form.get('title')?.errors?.['required']">
+           Title is required</p>
+          <p class="error" *ngIf="form.get('title')?.errors?.['minlength']">
+           Title must be atleast 5 characters long </p>
+        </ng-container>
 
         <div class="inputfield">
           <label>Cost of the trip</label>
-          <input type="number"  class="input"  name="cost" id="cost" />
+          <input type="number"  class="input" formControlName="cost"  id="cost" />
         </div>
+        <ng-container *ngIf="form.get('cost')?.touched">
+          <p class="error" *ngIf="form.get('cost')?.errors?.['required']">
+           Cost is required</p>
+          <p class="error" *ngIf="form.get('cost')?.errors?.['min']">
+           Cost cant be a negative number </p>
+        </ng-container>
 
         <div class="inputfield">
             <label>Duration of the trip</label>
-            <input type="text"  class="input"  name="duration" id="duration" />
+            <input type="text"  class="input"  formControlName="duration"  id="duration" />
           </div>
+          <ng-container *ngIf="form.get('duration')?.touched">
+            <p class="error" *ngIf="form.get('duration')?.errors?.['required']">
+             Duration of the trip is required</p>
+            <p class="error" *ngIf="form.get('duration')?.errors?.['minlength']">
+             Duration's length must be atleast 5 characters long </p>
+          </ng-container>
 
           <div class="inputfield">
             <label>Image URL</label>
-            <input type="text"  class="input"  name="imgUrl" id="imgUrl" />
+            <input type="text"  class="input" formControlName="imgUrl"  id="imgUrl" />
           </div>
+          <ng-container *ngIf="form.get('imgUrl')?.touched">
+            <p class="error" *ngIf="form.get('imgUrl')?.errors?.['required']">
+             Image URL is required</p>
+            <p class="error" *ngIf="form.get('imgUrl')?.errors?.['pattern']">
+             Image URL must be valid image link </p>
+          </ng-container>
 
         <div class="inputfield">
             <label>Description</label>
-            <textarea class="textarea" name="description" id="description"></textarea>
+            <textarea class="textarea" formControlName="description"  id="description"></textarea>
          </div> 
+         <ng-container *ngIf="form.get('description')?.touched">
+          <p class="error" *ngIf="form.get('description')?.errors?.['required']">
+           Description is required</p>
+          <p class="error" *ngIf="form.get('description')?.errors?.['minlength']">
+           Description must be atleast 15 characters long </p>
+        </ng-container>
          
-
         <div class="inputfield">
-          <button type="submit" class="btn">Create</button>
+          <button [disabled]="form.invalid" type="submit" class="btn">Create</button>
         </div>
       </div>
     </div>
