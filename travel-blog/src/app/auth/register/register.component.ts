@@ -18,6 +18,7 @@ export class RegisterComponent {
 
   form = this.fb.group({
    email: ['', [Validators.required, Validators.pattern(this.EMAIL_PATTERN)]],
+   username: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(10)]],
    passwords: this.fb.group({
     password: ['', [Validators.required, Validators.minLength(5)]],
     repass: []
@@ -30,11 +31,12 @@ export class RegisterComponent {
   constructor(private fb: FormBuilder, private userService: UserService, private router: Router ) { }
   
   registerHandler(): void {
-    const { email, passwords } = this.form.value;
+    const { email, username, passwords } = this.form.value;
 
    
     const body: CreateUserDto  = {
       email: email!,
+      username: username!,
       password: passwords?.password!
     }
     this.userService.register$(body).subscribe({

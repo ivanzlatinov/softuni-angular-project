@@ -7,7 +7,7 @@ const secret = 'a-023902923klsdalk';
 
 const tokenBlackList = new Set();
 
-async function register(email,password) {
+async function register(email, username, password) {
  const existing  = await User.findOne({ email }).collation({ locale: 'en', strength: 2 });
   if(existing) {
     throw new Error('Email is taken');
@@ -15,6 +15,7 @@ async function register(email,password) {
 
  const user = await User.create({
     email,
+    username,
     hashedPassword: await bcrypt.hash(password, 10)
   });
 
@@ -43,11 +44,13 @@ async function logout(token) {
 function createToken(user) {
     const payload = {
         _id: user._id,
+        username: user.username,
         email: user.email
     };
 
     return  {
         _id: user._id,
+        username: user.username,
         email: user.email,
        accessToken: jwt.sign(payload, secret)
     }

@@ -5,13 +5,13 @@ import { IUser } from './interfaces';
 import { HttpClient } from '@angular/common/http';
 import { tap } from 'rxjs';
 
-export interface CreateUserDto { email: string, password: string }
+export interface CreateUserDto { email: string, username: string, password: string }
 
 @Injectable()
 export class UserService {
 
   apiUrl = 'http://localhost:3000';
-  currentUser!: IUser | null;
+  currentUser!: IUser ;
   isLogged: boolean = false;
 
 
@@ -36,7 +36,7 @@ export class UserService {
      .pipe(tap(user => this.currentUser = user))
   }
 
-  setLoginInfo(user: IUser | null, status: boolean){
+  setLoginInfo(user: IUser , status: boolean){
     return (
       this.currentUser = user,
       this.isLogged = status

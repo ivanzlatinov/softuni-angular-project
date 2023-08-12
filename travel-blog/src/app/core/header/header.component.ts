@@ -17,7 +17,9 @@ export class HeaderComponent  {
    
   }
 
-  //get currentUser(): IUser
+  get currentUser(): IUser  {
+    return this.userService.currentUser;
+  }
 
   logoutHandler(): void {
    this.userService.isLogedOut();

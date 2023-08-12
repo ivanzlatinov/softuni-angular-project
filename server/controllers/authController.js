@@ -6,6 +6,7 @@ const authController = require('express').Router();
 
 authController.post('/register', 
  body('email').isEmail().withMessage('Invalid email'),
+ body('username').isLength({ min: 5, max: 10}).withMessage('Username must be between 5 and 10 characters'),
  body('password').isLength({ min: 5 }).withMessage('Password must be atleast 5 characters long'),
 async (req, res) => {
    try {
@@ -14,7 +15,7 @@ async (req, res) => {
         throw errors;
     }
     
-   const token = await register(req.body.email, req.body.password);
+   const token = await register(req.body.email, req.body.username, req.body.password);
    res.json(token);
    } catch(error) {
     const message = parseError(error);
