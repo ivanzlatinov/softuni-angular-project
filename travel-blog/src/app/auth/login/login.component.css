@@ -104,3 +104,9 @@
     color: #ba3939;
     margin: 3px;
   }
+  .login-error {
+    color: #ba3939;
+    margin: 3px;
+    text-align: center;
+    margin-top: 6px;
+  }

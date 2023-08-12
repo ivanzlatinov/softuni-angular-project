@@ -12,10 +12,9 @@ import { setSession } from 'src/app/shared/session/api';
 })
 export class LoginComponent {
    
-  constructor( private fb: FormBuilder ,private userService: UserService, private router: Router ) {
-  
-    
-  }
+   errorMessage: string = '';
+
+  constructor( private fb: FormBuilder ,private userService: UserService, private router: Router ) {}
 
   EMAIL_PATTERN = /^[a-z0-9A-Z\.-]{3,}@[a-z]+\.[a-z]+$/
 
@@ -27,7 +26,7 @@ export class LoginComponent {
 
   loginHandler(): void {
     const {email, password}: any = this.form.value;
-    
+    this.errorMessage = ''
     this.userService.login$({email, password}).subscribe({
       next: (userData) => {
        setSession(userData)
@@ -35,7 +34,8 @@ export class LoginComponent {
        this.router.navigate(['/home']);
       },
       error: (err) => {
-        console.log(err)
+        this.errorMessage = err.error.message;
+       
       }
 
     });

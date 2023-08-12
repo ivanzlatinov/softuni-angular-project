@@ -1,8 +1,9 @@
+const dataController = require('express').Router();
 
 const { hasUser } = require('../middlewares/guards');
 const { getAll, create, getById, update, deleteById, getByUserId } = require('../services/tripService');
+const { parseError } = require('../util/parser');
 
-const dataController = require('express').Router();
 
 dataController.get('/', async (req, res) => {
     let items = [];
@@ -22,8 +23,9 @@ dataController.post('/', hasUser(), async (req, res) => {
        const item = await create(data);
        res.json(item);
     }catch(err){
-        res.status(400);
-        console.log(err)
+        const message = parseError(err)
+        res.status(400).json({ message });
+        
     }
     res.end();
 });
@@ -44,8 +46,8 @@ dataController.put('/:id', hasUser(), async (req, res, next) => {
     const result = await update(req.params.id, req.body);
     res.json(result);
     } catch (err){
-        res.status(400)
-        console.log(err);
+        const message = parseError(err)
+        res.status(400).json({ message });
     }
 });
 
@@ -59,8 +61,8 @@ dataController.delete('/:id', hasUser(), async (req, res) => {
         await deleteById(req.params.id);
         res.status(204).end();
     } catch (error) {
-        res.status(400)
-        console.log(err);
+        const message = parseError(err)
+        res.status(400).json({ message });
     }
 
 })

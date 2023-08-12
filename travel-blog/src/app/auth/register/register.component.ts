@@ -13,7 +13,9 @@ import { matchPasswordValidator } from 'src/app/shared/validators';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-   
+  
+  errorMessage: string = '';
+
   EMAIL_PATTERN = /^[a-z0-9A-Z\.-]{3,}@[a-z]+\.[a-z]+$/
 
   form = this.fb.group({
@@ -46,7 +48,7 @@ export class RegisterComponent {
         this.router.navigate(['/home'])
       },
       error: (err) => {
-        console.log(err.error.error)
+        this.errorMessage = err.error.message;
       }
     })
   }

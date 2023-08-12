@@ -2,6 +2,7 @@
     <div class="center">
       <h1>Register</h1>
       <form [formGroup]="form" (ngSubmit)="registerHandler()">
+        <p class="register-error" *ngIf="errorMessage">{{errorMessage}}</p>
         <div class="txt_field">
           <input type="text" formControlName="email" id="email" required>
           <span></span>

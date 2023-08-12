@@ -2,6 +2,7 @@
     <div class="center">
       <h1>Login</h1>
       <form [formGroup]="form" (ngSubmit)="loginHandler()">
+        <p class="login-error" *ngIf="errorMessage">{{errorMessage}}</p>
         <div class="txt_field">
           <input  required type="text" formControlName="email"   id="email" >
           <span></span>
