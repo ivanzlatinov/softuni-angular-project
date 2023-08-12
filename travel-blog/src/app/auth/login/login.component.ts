@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { UserService } from 'src/app/core/user.service';
 import { Router } from '@angular/router';
+import { setSession } from 'src/app/shared/session/api';
+
 
 @Component({
   selector: 'app-login',
@@ -24,10 +26,19 @@ export class LoginComponent {
  
 
   loginHandler(): void {
-    //TODO 
-   
-    this.userService.isLoggedIn();
-    this.router.navigate(['/home']);
+    const {email, password}: any = this.form.value;
+    
+    this.userService.login$({email, password}).subscribe({
+      next: (userData) => {
+       setSession(userData)
+       this.userService.setLoginInfo(userData, true)
+       this.router.navigate(['/home']);
+      },
+      error: (err) => {
+        console.log(err)
+      }
+
+    });
     
   }
 }

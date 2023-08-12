@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
+import { IUser } from '../interfaces';
 
 @Component({
   selector: 'app-header',
@@ -16,7 +17,7 @@ export class HeaderComponent  {
    
   }
 
-  
+  //get currentUser(): IUser
 
   logoutHandler(): void {
    this.userService.isLogedOut();

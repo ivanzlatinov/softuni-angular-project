@@ -40,7 +40,7 @@ export class RegisterComponent {
     this.userService.register$(body).subscribe({
       next:(userData) => {
         setSession(userData);
-        this.userService.isLoggedIn();
+        this.userService.setLoginInfo(userData, true);
         this.router.navigate(['/home'])
       },
       error: (err) => {
