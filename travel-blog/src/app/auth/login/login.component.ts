@@ -26,7 +26,7 @@ export class LoginComponent {
   loginHandler(): void {
     //TODO 
    
-    this.userService.login();
+    this.userService.isLoggedIn();
     this.router.navigate(['/home']);
     
   }

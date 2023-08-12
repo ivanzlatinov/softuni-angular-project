@@ -9,7 +9,7 @@ import { PostsComponent } from './pages/posts/posts.component';
 import { CreateComponent } from './pages/create/create.component';
 import { MyListingsComponent } from './pages/my-listings/my-listings.component';
 import { PostDetailsComponent } from './pages/post-details/post-details.component';
-import { AuthGuard } from './core/guards/auth.guard';
+import { AuthGuard } from './shared/guards/auth.guard';
 
 const routes: Routes = [
   {

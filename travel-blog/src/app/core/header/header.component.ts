@@ -19,7 +19,7 @@ export class HeaderComponent  {
   
 
   logoutHandler(): void {
-   this.userService.logout();
+   this.userService.isLogedOut();
   }
   
 }

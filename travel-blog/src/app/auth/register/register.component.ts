@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { CreateUserDto, UserService } from 'src/app/core/user.service';
+import { setSession } from 'src/app/shared/session/api';
 import { matchPasswordValidator } from 'src/app/shared/validators';
 //import { AuthService } from '../auth.service';
 
@@ -24,11 +27,27 @@ export class RegisterComponent {
   }); 
  
    
-  constructor(private fb: FormBuilder,  ) { }
+  constructor(private fb: FormBuilder, private userService: UserService, private router: Router ) { }
+  
+  registerHandler(): void {
+    const { email, passwords } = this.form.value;
 
-  registerHandler() {
    
-    
+    const body: CreateUserDto  = {
+      email: email!,
+      password: passwords?.password!
+    }
+    this.userService.register$(body).subscribe({
+      next:(userData) => {
+        setSession(userData);
+        this.userService.isLoggedIn();
+        this.router.navigate(['/home'])
+      },
+      error: (err) => {
+        console.log(err.error.error)
+      }
+    })
   }
+  
 
 }
