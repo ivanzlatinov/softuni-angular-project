@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IArticle } from '../../core/interfaces';
+import { IPost } from '../../core/interfaces';
 
 @Component({
   selector: 'app-article-item',
@@ -8,7 +8,7 @@ import { IArticle } from '../../core/interfaces';
 })
 export class ArticleItemComponent implements OnInit {
 
-  @Input() article!: IArticle;
+  @Input() article!: IPost;
 
   constructor() {
 

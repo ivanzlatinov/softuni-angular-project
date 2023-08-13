@@ -4,7 +4,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { storageServiceProvider } from './storage.service';
-import { ArticleService } from './article.service';
+import { PostService } from './post.service';
 import { UserService } from './user.service';
 
 
@@ -24,7 +24,7 @@ import { UserService } from './user.service';
   ],
   providers: [
     UserService,
-    ArticleService,
+    PostService,
     storageServiceProvider,
   ]
 

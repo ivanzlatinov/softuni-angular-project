@@ -2,7 +2,7 @@
   <form [formGroup]="form" (ngSubmit)="newPostHandler()">
   <div class="wrapper">
       <div class="title">
-        Create a Trip
+        Create a Post
       </div>
       <div class="form">
          <div class="inputfield">
@@ -69,8 +69,9 @@
           </ng-container>
       
         <div class="inputfield">
-          <button type="submit"  class="btn">Create</button>
+          <button type="submit" [disabled]="form.invalid"  class="btn">Create</button>
         </div>
+        
       </div>
   </div>
  </form>	

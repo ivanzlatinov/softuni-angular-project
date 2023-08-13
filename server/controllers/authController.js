@@ -26,7 +26,11 @@ async (req, res) => {
 authController.post('/login', async (req,res) => {
     try {
         const token = await login(req.body.email, req.body.password);
-        res.json(token);
+        if(!token) {
+            throw new Error('Unable to register with this credential!')
+        }
+        res.status(200).json(token)
+        res.end()
         } catch(error) {
             const message = parseError(error)
         res.status(401).json({ message });

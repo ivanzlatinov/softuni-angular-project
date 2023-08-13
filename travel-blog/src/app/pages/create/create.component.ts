@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { PostService } from 'src/app/core/post.service';
+import { UserService } from 'src/app/core/user.service';
+import { getSession } from 'src/app/shared/session/api';
 
 @Component({
   selector: 'app-create',
@@ -10,7 +14,7 @@ export class CreateComponent {
 
    URL_PATTERN = /^https?:\/\/.+/i
 
-  constructor(private fb: FormBuilder){ }
+  constructor(private fb: FormBuilder, private postService: PostService, private router: Router, private userService: UserService){ }
 
   form = this.fb.group({
      destination: ['', [Validators.required]],
@@ -22,6 +26,21 @@ export class CreateComponent {
   })
 
   newPostHandler(): void {
-    console.log(this.form.value)
+    const { _id } = getSession()
+    const _ownerId = _id;
+    const  { destination, title, cost, duration, imgUrl, description} = this.form.value
+     const post = { destination, title, cost, duration, imgUrl, description, _ownerId};
+     this.postService.createPost(post).subscribe({
+      next: (post) => {
+        if(!post) { return}
+        this.router.navigate(['/posts'])
+      },
+      error: (err) => {
+        console.log(err)
+      }
+     })
+
   }
+
+  
 }

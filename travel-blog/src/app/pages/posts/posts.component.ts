@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ArticleService } from '../../core/article.service';
-import { IArticle } from '../../core/interfaces';
+import { PostService } from '../../core/post.service';
+import { IPost } from '../../core/interfaces';
 
 
 @Component({
@@ -11,9 +11,9 @@ import { IArticle } from '../../core/interfaces';
 export class PostsComponent  implements OnInit{
 
   //TODO
-  articleList!: IArticle[];
+  postList!: IPost[];
 
-  constructor(private articleService: ArticleService) {
+  constructor(private postService: PostService) {
 
   }
 
