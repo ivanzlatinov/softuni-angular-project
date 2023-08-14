@@ -4,8 +4,8 @@
       <h1 class="catalog-title">Our Posts</h1>
     </div>
     <div class="all-trips">
-    <app-article-item></app-article-item>
-    <app-article-item></app-article-item>
-    <app-article-item></app-article-item>
+      <div *ngFor="let post of postList">
+        <app-article-item [post]="post"></app-article-item>
+      </div>
     </div>
   </div>

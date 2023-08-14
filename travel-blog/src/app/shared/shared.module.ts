@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ArticleItemComponent } from './article-item/article-item.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 
@@ -9,7 +10,8 @@ import { ArticleItemComponent } from './article-item/article-item.component';
     ArticleItemComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    AppRoutingModule,
   ],
   exports: [
     ArticleItemComponent,

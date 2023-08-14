@@ -11,16 +11,21 @@ import { IPost } from '../../core/interfaces';
 export class PostsComponent  implements OnInit{
 
   //TODO
-  postList!: IPost[];
+  postList: IPost[];
 
   constructor(private postService: PostService) {
 
   }
 
   ngOnInit(): void {
-  //  this.articleService.loadArticleList().subscribe(articleList => {
- // this.articleList = articleList;
- //   })
+     this.postService.loadAllPosts().subscribe({
+      next: (posts) => {
+        this.postList = posts
+      },
+      error: (err) => {
+        console.log(err)
+      }
+     })
   }
 
 }

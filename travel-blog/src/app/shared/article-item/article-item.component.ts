@@ -8,7 +8,7 @@ import { IPost } from '../../core/interfaces';
 })
 export class ArticleItemComponent implements OnInit {
 
-  @Input() article!: IPost;
+  @Input() post: IPost;
 
   constructor() {
 

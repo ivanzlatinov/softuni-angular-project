@@ -5,12 +5,12 @@
                 <li class='cards-item'>
                     <div class='cards-item-link' >
                      <figure class='cards-item-pic-wrap' >
-                      <img src="../../../assets/images/bannerimg.jpg" alt='Travel Img' class='cards-item-img' />
+                      <img src={{post.imgUrl}} alt='Travel Img' class='cards-item-img' />
                      </figure>
                      <div class='cards-item-info'>
-                         <h5 class='cards-item-text>'>Title goes here and cant be really long</h5>
+                         <h5 class='cards-item-text>'>{{post.title}}</h5>
                          
-                         <a href="#" class='details-btn'>Details</a>
+                         <a [routerLink]="['/posts/', post._id]" class='details-btn'>Details</a>
                      </div>
                     </div>
                   </li> 
