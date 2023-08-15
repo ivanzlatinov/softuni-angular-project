@@ -2,21 +2,23 @@
     <div class="details-box">
         <div class="details-images">
             <div class="details-img-holder active">
-                <img src="../img/milano.jpg">
+                <img src={{currentPost?.imgUrl}}>
             </div>
             
         </div>
         <div class="details-basic-info">
-            <h1>Destination</h1>
+            <h1>{{currentPost?.destination}}</h1>
            
-            <span>Cost of the trip: 222$</span>
-            <p>Duration</p>
+            <span>Cost of the trip: {{currentPost?.cost}}</span>
+            <p>For {{currentPost?.duration}}</p>
             
-            <div class="details-options">
-                <a href="#" class="edit-btn">Edit trip</a>
-                <a href="#" class="delete-btn">Delete trip</a>
-            </div>
-            
+            <ng-container *ngIf="isOwner">
+                    <div class="details-options">
+                    <a [routerLink]="['/posts/edit', currentPost?._id]" class="edit-btn">Edit trip</a>
+                    <a (click)="deletePost()" class="delete-btn">Delete trip</a>
+                </div>
+            </ng-container>
+                
         </div>
         <div class="details-description">
             <p> Phone for contacts:  </p>

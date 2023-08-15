@@ -15,11 +15,21 @@ export class PostService {
   constructor(private http: HttpClient) { }
 
  createPost(body: {},) {
-  return this.http.post(`${apiUrl}data/catalog`, body,  { headers: { 'x-authorization': getSession().accessToken } })
+  return this.http.post(`${apiUrl}/data/catalog`, body,  { headers: { 'x-authorization': getSession().accessToken } })
  }
 
   
  loadAllPosts() {
   return this.http.get<IPost[]>(`${apiUrl}/data/catalog`)
  }
+
+ loadOnePost(id: string) {
+  return this.http.get<IPost>(`${apiUrl}/data/catalog/${id}`)
+ }
+
+ deletePost(id: string) {
+  return this.http.delete(`${apiUrl}/data/catalog/${id}`,
+  { headers: { 'x-authorization': getSession().accessToken } })
+ }
+
 }

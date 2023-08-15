@@ -10,6 +10,7 @@ import { CreateComponent } from './create/create.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MyListingsComponent } from './my-listings/my-listings.component';
 import { PostDetailsComponent } from './post-details/post-details.component';
+import { EditPostComponent } from './edit-post/edit-post.component';
 
 
 
@@ -22,6 +23,7 @@ import { PostDetailsComponent } from './post-details/post-details.component';
     CreateComponent,
     MyListingsComponent,
     PostDetailsComponent,
+    EditPostComponent,
   ],
   imports: [
     CommonModule,

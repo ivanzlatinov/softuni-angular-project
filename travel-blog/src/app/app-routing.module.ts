@@ -10,6 +10,7 @@ import { CreateComponent } from './pages/create/create.component';
 import { MyListingsComponent } from './pages/my-listings/my-listings.component';
 import { PostDetailsComponent } from './pages/post-details/post-details.component';
 import { AuthGuard } from './shared/guards/auth.guard';
+import { EditPostComponent } from './pages/edit-post/edit-post.component';
 
 const routes: Routes = [
   {
@@ -60,6 +61,12 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     component: PostDetailsComponent,
     data: { title: 'Details' }
+  },
+  {
+    path: 'posts/edit/:id',
+    canActivate: [AuthGuard],
+    component: EditPostComponent,
+    data: { title: 'Edit' }
   },
   {
     path: '**',
