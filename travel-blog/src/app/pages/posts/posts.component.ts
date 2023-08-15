@@ -10,7 +10,7 @@ import { IPost } from '../../core/interfaces';
 })
 export class PostsComponent  implements OnInit{
 
-  //TODO
+  //TODO FIX CATALOG ITEMS
   postList: IPost[];
 
   constructor(private postService: PostService) {

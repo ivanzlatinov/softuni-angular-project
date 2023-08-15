@@ -1,7 +1,10 @@
 
 <div class="catalog-background">
-    <div class="title-container">
+    <div *ngIf="postList" class="title-container">
       <h1 class="catalog-title">Our Posts</h1>
+    </div>
+    <div *ngIf="!postList" class="title-container">
+      <h1 class="catalog-title">Loading...</h1>
     </div>
     <div class="all-trips">
       <div *ngFor="let post of postList">
