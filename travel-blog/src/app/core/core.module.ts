@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
-import { storageServiceProvider } from './storage.service';
 import { PostService } from './post.service';
 import { UserService } from './user.service';
 
@@ -25,7 +24,6 @@ import { UserService } from './user.service';
   providers: [
     UserService,
     PostService,
-    storageServiceProvider,
   ]
 
 })

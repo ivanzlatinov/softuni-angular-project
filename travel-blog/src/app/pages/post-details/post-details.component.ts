@@ -11,10 +11,11 @@ import { UserService } from 'src/app/core/user.service';
 })
 export class PostDetailsComponent implements OnInit {
 
-  //TODO FIX CSS
+  //TODO FIX CSS +  contact the owner!
    currentPost: IPost | null;
    isOwner: Boolean = false;
    Owner: IUser | any;
+   OwnerEmail: string;
   constructor( private router: Router,private activatedRoute: ActivatedRoute, private postService: PostService, private userService: UserService) {
 
   }
@@ -27,6 +28,8 @@ export class PostDetailsComponent implements OnInit {
     next: (post) => {
       this.currentPost = post;
        this.Owner = this.currentPost._ownerId
+       
+       console.log(this.Owner)
       if(this.Owner === this.userService?.currentUser?._id) {
           this.isOwner = true
       }

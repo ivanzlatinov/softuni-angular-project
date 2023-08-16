@@ -7,26 +7,25 @@
             
         </div>
         <div class="details-basic-info">
-            <h1>{{currentPost?.destination}}</h1>
+            <h1>Trip to: {{currentPost?.destination}}</h1>
            
             <span>Cost of the trip: {{currentPost?.cost}}</span>
-            <p>For {{currentPost?.duration}}</p>
+            <h3>For {{currentPost?.duration}}</h3>
             
             <ng-container *ngIf="isOwner">
                     <div class="details-options">
                     <a [routerLink]="['/posts/edit', currentPost?._id]" class="edit-btn">Edit trip</a>
-                    <a (click)="deletePost()" class="delete-btn">Delete trip</a>
+                    <a  type="button" (click)="deletePost()" class="delete-btn">Delete trip</a>
                 </div>
             </ng-container>
                 
         </div>
         <div class="details-description">
-            <p> Phone for contacts:  </p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus temporibus corporis repudiandae, consectetur nostrum nisi commodi placeat rerum molestias numquam nihil accusantium deleniti! Enim, nesciunt a quis amet hic officia. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae nemo accusantium tempora facere doloremque cum iusto, ut neque, fuga omnis libero laborum ullam. At dolorum qui atque labore illo dignissimos.</p>
+            <p>{{currentPost?.description}}</p>
             
         </div>
         <div class="details-phone">
-            <p>Contact the publisher: </p>
+            <p>Contact the publisher: {{OwnerEmail}} </p>
         </div>
     </div>
 </div>

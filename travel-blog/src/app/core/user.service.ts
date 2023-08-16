@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { StorageService } from './storage.service';
 import { Observable } from 'rxjs';
 import { IUser } from './interfaces';
 import { HttpClient } from '@angular/common/http';

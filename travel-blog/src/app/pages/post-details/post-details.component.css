@@ -88,8 +88,8 @@
 }
 
 .details-box .details-description p {
-    color: #808080;
-    font-size: 14px;
+    color: #252525;
+    font-size: 16px;
     line-height: 1.5;
 }
 
@@ -98,7 +98,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    color: #808080;
+    color: #252525;
 }
 
 .details-box .details-description .details-features i {
@@ -107,13 +107,11 @@
 
 
 
-.details-box .details-description .details-social a:hover {
-    color: #bf99c7;
-}
+
 
 
  .details-phone p {
-    color: #808080;
+    color: #252525;
     margin: 25px 0px
 }
 
@@ -124,4 +122,5 @@
 
 .delete-btn {
     background-color: red;
+    cursor: pointer;
 }
