@@ -32,4 +32,7 @@ export class PostService {
   { headers: { 'x-authorization': getSession().accessToken } })
  }
 
+ updatePost(post: {}, id: string) {
+  return this.http.put(`${apiUrl}/data/catalog/${id}`, post, { headers: { 'x-authorization': getSession().accessToken } } )
+ }
 }
