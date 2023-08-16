@@ -15,7 +15,7 @@ import { UserService } from './user.service';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
   ],
   exports: [
     HeaderComponent,

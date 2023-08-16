@@ -8,6 +8,11 @@ import { CoreModule } from './core/core.module';
 import { PagesModule } from './pages/pages.module';
 import { SharedModule } from './shared/shared.module';
 import { AuthModule } from './auth/auth.module';
+import { StaticPagesModule } from './static-pages/static-pages.module';
+import { AuthRoutingModule } from './auth/auth-routing.module';
+import { PagesRoutingModule } from './pages/pages-routing.module';
+
+
 
 
 
@@ -17,11 +22,14 @@ import { AuthModule } from './auth/auth.module';
   ],
   imports: [
     BrowserModule,
+    AuthRoutingModule,
+    PagesRoutingModule,
     AppRoutingModule,
     CoreModule,
     SharedModule,
     PagesModule,
     AuthModule,
+    StaticPagesModule,
     HttpClientModule,
   ],
   providers: [],
