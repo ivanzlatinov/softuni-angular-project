@@ -35,4 +35,8 @@ export class PostService {
  updatePost(post: {}, id: string) {
   return this.http.put(`${apiUrl}/data/catalog/${id}`, post, { headers: { 'x-authorization': getSession().accessToken } } )
  }
+
+ loadMyPosts(id: string) {
+  return this.http.get<IPost[]>(`${apiUrl}/data/catalog?where=_ownerId%3D%22${id}%22`, { headers: { 'x-authorization': getSession().accessToken } })
+ }
 }

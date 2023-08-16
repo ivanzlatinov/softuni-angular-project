@@ -1,9 +1,9 @@
-.myTrips-background {
+.myPosts-background {
     background: rgb(37, 34, 34);
     height: 1500px;
 }
 
-.myTrips-title{
+.myPosts-title{
     padding: 50px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: aliceblue;
@@ -11,7 +11,7 @@
     
 }
 
-.myTrips{
+.myPosts{
     display: grid;
     grid-template-columns: 400px 400px 400px;
     gap: 150px;
