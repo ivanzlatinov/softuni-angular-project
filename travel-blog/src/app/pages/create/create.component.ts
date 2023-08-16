@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { PostService } from 'src/app/core/post.service';
-import { UserService } from 'src/app/core/user.service';
+import { PostService } from 'src/app/pages/post.service';
+import { UserService } from 'src/app/auth/user.service';
 import { getSession } from 'src/app/shared/session/api';
 
 @Component({

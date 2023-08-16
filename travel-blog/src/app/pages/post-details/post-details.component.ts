@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IUser, IPost } from 'src/app/core/interfaces';
-import { PostService } from 'src/app/core/post.service';
-import { UserService } from 'src/app/core/user.service';
+import { IUser, IPost } from 'src/app/shared/interfaces';
+import { PostService } from 'src/app/pages/post.service';
+import { UserService } from 'src/app/auth/user.service';
 
 @Component({
   selector: 'app-post-details',

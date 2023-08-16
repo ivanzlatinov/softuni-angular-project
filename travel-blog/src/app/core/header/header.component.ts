@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { UserService } from '../user.service';
-import { IUser } from '../interfaces';
+import { UserService } from '../../auth/user.service';
+import { IUser } from '../../shared/interfaces';
 
 @Component({
   selector: 'app-header',

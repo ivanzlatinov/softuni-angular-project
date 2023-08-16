@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CreateUserDto, UserService } from 'src/app/core/user.service';
+import { CreateUserDto, UserService } from 'src/app/auth/user.service';
 import { setSession } from 'src/app/shared/session/api';
 import { matchPasswordValidator } from 'src/app/shared/validators';
 //import { AuthService } from '../auth.service';

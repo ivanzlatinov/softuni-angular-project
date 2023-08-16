@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivationStart, Router } from '@angular/router';
 import { filter, map } from 'rxjs';
-import { UserService } from './core/user.service';
+import { UserService } from './auth/user.service';
 import { getSession } from './shared/session/api';
 
 @Component({

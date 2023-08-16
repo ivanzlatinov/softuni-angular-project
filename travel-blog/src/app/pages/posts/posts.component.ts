@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PostService } from '../../core/post.service';
-import { IPost } from '../../core/interfaces';
+import { PostService } from '../post.service';
+import { IPost } from '../../shared/interfaces';
 
 
 @Component({

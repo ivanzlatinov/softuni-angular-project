@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IPost } from '../../core/interfaces';
+import { IPost } from '../interfaces';
 
 @Component({
   selector: 'app-article-item',

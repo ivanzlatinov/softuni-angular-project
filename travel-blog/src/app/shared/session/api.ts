@@ -1,4 +1,4 @@
-import { IUser } from "src/app/core/interfaces";
+import { IUser } from "src/app/shared/interfaces";
 
 
 export const setSession = ({ _id, email, username, accessToken}: IUser) => {

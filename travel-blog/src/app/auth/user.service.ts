@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IUser } from './interfaces';
+import { IUser } from '../shared/interfaces';
 import { HttpClient } from '@angular/common/http';
 import { tap } from 'rxjs';
 import { getSession, logoutSession } from '../shared/session/api';

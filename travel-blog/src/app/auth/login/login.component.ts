@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { UserService } from 'src/app/core/user.service';
+import { UserService } from 'src/app/auth/user.service';
 import { Router } from '@angular/router';
 import { setSession } from 'src/app/shared/session/api';
 
