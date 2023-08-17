@@ -6,3 +6,21 @@
     
 </div>
 
+<div class="cards"> 
+    <h1 class="recent">Recent posts</h1> 
+      <div class="cards-container"> 
+         <div class="cards-wrapper">
+             <ul class="cards-items" id="upper">
+            <ng-container *ngFor="let post of recentPostsUpper ">
+                <app-article-item [post]="post" class="cards-item"></app-article-item>
+            </ng-container>
+             </ul>
+
+             <ul class='cards-items' id="lower">
+                <ng-container *ngFor="let post of recentPostsLower">
+                    <app-article-item [post]="post" class="cards-item"></app-article-item>
+                </ng-container>
+       </ul>
+         </div>
+     </div>
+   </div>

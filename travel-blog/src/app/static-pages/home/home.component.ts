@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PostService } from 'src/app/pages/post.service';
+import { IPost } from 'src/app/shared/interfaces';
 
 
 @Component({
@@ -8,10 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-constructor() {}
+  recentPostsUpper: IPost[];
+  recentPostsLower: IPost[];
+
+constructor(private postService: PostService) {}
 
 ngOnInit(): void {
- 
+ this.postService.loadAllPosts().subscribe({
+  next: (posts) => {
+   this.recentPostsUpper = posts.reverse().slice(0,3);
+   this.recentPostsLower = posts.slice(3,5)
+  },
+  error: (err) => {
+    console.log(err)
+  }
+ })
 }
 
 }

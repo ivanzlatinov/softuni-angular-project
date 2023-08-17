@@ -1,8 +1,10 @@
 
+
+
 .banner{
 
     background-image: url('../../../assets/images/bannerimg.jpg');
-    height: 800px;
+    height: 875px;
     background-position: center ;
     background-size: cover;
 }
@@ -43,3 +45,47 @@
     background-color: white;
     color: #4CAF50;
   }
+
+  
+
+  .cards {
+    padding: 4rem;
+    background: #fff;
+  }
+  
+  .recent {
+    text-align: center;
+  }
+  
+  .cards-container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    max-width: 1120px;
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  .cards-wrapper {
+    position: relative;
+    margin: 50px 0 45px;
+  }
+  
+  .cards-items {
+    display: flex;
+    
+    margin-bottom: 24px;
+  }
+
+  #lower :nth-child(1) {
+    margin-left: 200px;
+  }
+  
+  
+
+  
+  
+
+ 
+
+  
