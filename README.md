@@ -6,11 +6,11 @@
 
 In the project directory, you can open 2 terminals and run :
 
-### `cd travel-blog to open client folder than type ng s`
+### `cd travel-blog to open client folder then type ng s`
 
 Runs the app in the development mode.
 
-### `cd server to open server folder than type npm start `
+### `cd server to open server folder then type npm start `
 
 Runs the server to be used for data fetching.
 
