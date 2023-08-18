@@ -20,6 +20,7 @@ ngOnInit(): void {
   next: (posts) => {
    this.recentPostsUpper = posts.reverse().slice(0,3);
    this.recentPostsLower = posts.slice(3,5)
+  
   },
   error: (err) => {
     console.log(err)

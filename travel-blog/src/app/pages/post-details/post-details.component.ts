@@ -44,6 +44,7 @@ export class PostDetailsComponent implements OnInit {
   deletePost(): void {
   const id = this.currentPost?._id
 
+  if(confirm("Are you sure you want to delete this post")) {
   this.postService.deletePost(id!).subscribe({
     next: () => {
      this.router.navigate(['/my-listings'])
@@ -52,7 +53,7 @@ export class PostDetailsComponent implements OnInit {
       console.log(err);
     }
   })
-
+  }
   }
 
 }
