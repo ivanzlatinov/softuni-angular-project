@@ -11,7 +11,7 @@ import { UserService } from 'src/app/auth/user.service';
 })
 export class PostDetailsComponent implements OnInit {
 
-  //TODO FIX CSS +  contact the owner!
+  
    currentPost: IPost | null;
    isOwner: Boolean = false;
    Owner: IUser | any;
