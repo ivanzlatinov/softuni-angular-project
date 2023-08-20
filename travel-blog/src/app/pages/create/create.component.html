@@ -7,13 +7,13 @@
       <div class="form">
          <div class="inputfield">
             <label>Destination</label>
-            <input type="text" class="input" formControlName="destination"  name="destination" id="destination">
+            <input type="text" class="input" formControlName="destination"   id="destination">
          </div>
          <p class="error" *ngIf="form.get('destination')?.touched && form.get('destination')?.errors?.['required']">
           Destination name is required</p>  
           <div class="inputfield">
             <label>Title</label>
-            <input type="text" class="input" formControlName="title"  name="title" id="title" >
+            <input type="text" class="input" formControlName="title"   id="title" >
          </div> 
         <ng-container *ngIf="form.get('title')?.touched">
          <p class="error" *ngIf="form.get('title')?.errors?.['required']">
@@ -24,7 +24,7 @@
 
          <div class="inputfield">
             <label>Cost</label>
-            <input type="number" class="input" formControlName="cost"  name="cost" id="cost">
+            <input type="number" class="input" formControlName="cost"   id="cost">
          </div>  
 
         <ng-container *ngIf="form.get('cost')?.touched">
@@ -36,7 +36,7 @@
 
        <div class="inputfield">
         <label>Duration</label>
-        <input type="text" class="input" formControlName="duration"  name="duration" id="duration" >
+        <input type="text" class="input" formControlName="duration"   id="duration" >
      </div> 
 
      <ng-container *ngIf="form.get('duration')?.touched">
@@ -48,7 +48,7 @@
 
         <div class="inputfield">
             <label>Image URL</label>
-            <input type="text" class="input" formControlName="imgUrl"  name="imgUrl" id="imgUrl">
+            <input type="text" class="input" formControlName="imgUrl"   id="imgUrl">
          </div> 
           <ng-container *ngIf="form.get('imgUrl')?.touched">
          <p class="error" *ngIf="form.get('imgUrl')?.errors?.['required']">
@@ -59,7 +59,7 @@
          
         <div class="inputfield">
             <label>Description</label>
-            <textarea class="textarea" formControlName="description"  name="description" id="description"></textarea>
+            <textarea class="textarea" formControlName="description"   id="description"></textarea>
          </div> 
          <ng-container *ngIf="form.get('description')?.touched">
          <p class="error" *ngIf="form.get('description')?.errors?.['required']">
